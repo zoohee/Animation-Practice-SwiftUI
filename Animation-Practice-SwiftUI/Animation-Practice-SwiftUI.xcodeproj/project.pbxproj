@@ -53,9 +53,9 @@
 		C58AB6BA297FDA7F008D2E43 /* Animation-Practice-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				C58AB6C9297FDA89008D2E43 /* Rabbit */,
 				C58AB6BB297FDA7F008D2E43 /* Animation_Practice_SwiftUIApp.swift */,
 				C58AB6BD297FDA7F008D2E43 /* ContentView.swift */,
+				C58AB6C9297FDA89008D2E43 /* Rabbit */,
 				C58AB6BF297FDA81008D2E43 /* Assets.xcassets */,
 				C58AB6C1297FDA81008D2E43 /* Preview Content */,
 			);

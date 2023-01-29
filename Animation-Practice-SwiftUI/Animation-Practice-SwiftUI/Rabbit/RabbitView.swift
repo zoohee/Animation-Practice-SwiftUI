@@ -11,10 +11,10 @@ fileprivate let W = UIScreen.main.bounds.width
 fileprivate let H = UIScreen.main.bounds.height
 
 fileprivate let p1 = CGPoint(x: 0 , y: H / 2 )
-fileprivate let p2 = CGPoint(x: (W)/2  , y: 0)
+fileprivate let p2 = CGPoint(x: (W)/2  , y: H / 2)
 fileprivate let p3 = CGPoint(x: W  , y: H / 2)
 
-// 쥐님이 처음에 만들었던 path
+//path
 fileprivate var samplePath : Path {
     let c1 = CGPoint(x: (p1.x + p2.x) / 2, y: p1.y)
     let c2 = CGPoint(x: (p1.x + p2.x) / 2, y: 0)
@@ -48,16 +48,14 @@ struct RabbitView: View {
             }
             .onAppear{
                 isMovingForward = true
-                
-                
-                
+
                 // 디스패치 큐를 활용해 두번 점프 구현.
                 DispatchQueue.main.asyncAfter(deadline: .now() + duration + 0.1) {
                     isMovingForward = false
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + duration + 1.2) {
-                    isMovingForward = true
-                }
+//                DispatchQueue.main.asyncAfter(deadline: .now() + duration + 1.2) {
+//                    isMovingForward = true
+//                }
 
                 // Sneak back to p1. This is a code smell.
                 DispatchQueue.main.asyncAfter(deadline: .now() + duration + 2.2) {
@@ -71,8 +69,7 @@ struct Moving: ViewModifier, Animatable {
     var time : CGFloat  // Normalized from 0...1.
     let path : Path
     let start: CGPoint  // Could derive from path.
-    
-    
+
     //변하는 값
     var animatableData: CGFloat {
         get { time }
